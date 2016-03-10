@@ -735,14 +735,14 @@
         if(Object.keys) {
             return Object.keys(obj).length === count;
         }
-        var properties = [],
+        var length = 0,
             property;
         for(property in obj) {
             if (hasOwnProperty.call(obj, property)) {
-                properties.push(property);
+            	length++;
             }
         }
-        return properties.length === count;
+        return length === count;
     };
     // propertyCount method does not support 'all' and 'any' interfaces
     is.propertyCount.api = ['not'];
