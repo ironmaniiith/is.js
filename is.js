@@ -149,6 +149,11 @@
         return toString.call(value) === '[object RegExp]';
     };
 
+    // is a given value File?
+    is.file = function(value) {
+        return toString.call(value) == '[object File]';
+    }
+
     // are given values same type?
     // prevent NaN, Number same type check
     is.sameType = function(value1, value2) {
