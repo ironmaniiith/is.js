@@ -756,9 +756,8 @@
     is.propertyDefined.api = ['not'];
 
     // is a given object window?
-    // setInterval method is only available for window object
     is.windowObject = function(obj) {
-        return typeof obj === 'object' && 'setInterval' in obj;
+        return typeof obj === 'object' && obj.window === obj;
     };
 
     // is a given object a DOM node?
