@@ -387,11 +387,12 @@
             return false;
         }
         var words = str.split(' ');
-        var capitalized = [];
         for(var i = 0; i < words.length; i++) {
-            capitalized.push(words[i][0] === words[i][0].toUpperCase());
+            if(words[i][0] !== words[i][0].toUpperCase()){
+                return false;
+            }
         }
-        return is.all.truthy.apply(null, capitalized);
+        return true;
     };
 
     // is a given string palindrome?
