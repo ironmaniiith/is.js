@@ -145,6 +145,16 @@
         return toString.call(value) === '[object Object]';
     };
 
+    // is the given string a valid JSON?
+    is.jsonString = function(value) {
+        try {
+            JSON.parse(value);
+        } catch (e) {
+            return false;
+        }
+        return true;
+    };
+
     // is a given value RegExp?
     is.regexp = function(value) {
         return toString.call(value) === '[object RegExp]';
